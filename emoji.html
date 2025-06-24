@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Funny Emoji Background & Photo Changer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-image: url('https://em-content.zobj.net/thumbs/240/apple/354/face-with-tears-of-joy_1f602.png');
+      background-repeat: repeat;
+      background-size: 100px;
+    }
+
+    #photo {
+      margin-top: 50px;
+      width: 300px;
+      height: auto;
+      border: 5px solid #ffcc00;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #333;
+    }
+
+    #changeBtn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #changeBtn:hover {
+      background-color: #ff9900;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="background-color: blueviolet;">😂 Funny Photo Changer 😂</h1>
+
+  <img id="photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWeQodQ6VnU4tCBXcZnQm0SaeGzk970KYipg&s" alt="Funny Pic">
+
+  <br>
+  <button id="changeBtn">Click to Change Photo</button>
+
+  <script>
+    const photos = [
+      'https://media.tenor.com/KZRO0QZZ4PcAAAAM/funny-memes-happy-sunday.gif',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4jPBqgTXFVFJfKmF4AzLhAOSE8D_DAZrjpw&s',
+      'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1552043987i/44304762.jpg',
+      'https://static.demilked.com/wp-content/uploads/2025/03/67dcfd63be2d7-funny-cat-memes-catsinplaymode-9-67da8e9854f70__700.jpg',
+      'https://i.chzbgr.com/full/9033817344/h523ECDB0/woman-presenting-class-and-someone-says-can-speak-up-cant-hear'
+    ];
+
+    let index = 0;
+
+    document.getElementById('changeBtn').addEventListener('click', () => {
+      index = (index + 1) % photos.length;
+      document.getElementById('photo').src = photos[index];
+    });
+  </script>
+
+</body>
+</html>
